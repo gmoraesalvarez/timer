@@ -49,22 +49,23 @@ def draw_14seg_s(x,y,char_,size):
     if char_ == 7: segs = [0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
     if char_ == 8: segs = [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0]
     if char_ == 9: segs = [1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0]
-        
+
+    #                      |  |  -  -  _  |  |  \  |  /  -  /  |  \  
     if char_ == "a":segs= [1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0]
     if char_ == "b":segs= [0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0]
-    if char_ == "c":segs= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    if char_ == "d":segs= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    if char_ == "e":segs= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    if char_ == "f":segs= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    if char_ == "g":segs= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    if char_ == "h":segs= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    if char_ == "i":segs= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    if char_ == "j":segs= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    if char_ == "c":segs= [1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    if char_ == "d":segs= [0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0]
+    if char_ == "e":segs= [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    if char_ == "f":segs= [1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    if char_ == "g":segs= [1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0]
+    if char_ == "h":segs= [1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0]
+    if char_ == "i":segs= [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0]
+    if char_ == "j":segs= [0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
     if char_ == 'k':segs= [1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1]
-    if char_ == "l":segs= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    if char_ == "m":segs= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    if char_ == "n":segs= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    if char_ == "o":segs= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    if char_ == "l":segs= [1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    if char_ == "m":segs= [1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0]
+    if char_ == "n":segs= [1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1]
+    if char_ == "o":segs= [1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
     if char_ == "p":segs= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     if char_ == "q":segs= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     if char_ == "r":segs= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -96,11 +97,11 @@ def draw_14seg_s(x,y,char_,size):
     
     display.line(x,y,x+pad2,y+pad2+pad3+1,segs[7]) # H
     display.vline(x+pad2+1,y,size,segs[8])     # I
-    display.line(x+pad2+1,y+pad2+4,x+size,y+1,segs[9]) # J
+    display.line(x+pad2+1,y+size,x+size,y+1,segs[9]) # J
     display.hline(x+pad2+1,y+size,pad2,segs[10]) # K
     display.line(x+1,y+size+size,x+pad2+1,y+pad2+4,segs[11]) # L
     display.vline(x+pad2+1,y+size+1,size,segs[12]) # M
-    display.line(x+pad2+1,y+pad2+4,x+size,y+size+size,segs[13]) # N
+    display.line(x+pad2+1,y+size+1,x+size,y+size+size,segs[13]) # N
     
     display.vline(x,y,size,segs[0]) # A
     display.vline(x,y+pad3+size,size,segs[1])    # B
@@ -109,7 +110,7 @@ def draw_14seg_s(x,y,char_,size):
     display.hline(x+pad5,y+pad3+size+size,size,segs[4]) # E
     display.vline(x+pad5+size,y,size,segs[5]) # F
     display.vline(x+pad5+size,y+pad3+size,size,segs[6]) # G
-
+    
 #draw_7seg_s(1,2,1,5)
 #draw_7seg_s(13,2,2,5)
 #draw_7seg_s(24,2,3,5)
